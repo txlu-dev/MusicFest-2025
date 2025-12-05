@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tickets | MusicFest 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <body>
+    
+    <! –– Site Navigation Menu ––>
+    <header><nav>
+      <h1><a href="index.html" class="logo" >MusicFest 2025<a href="index.html" ></a></h1>
+      <a href="index.html" ><em class="fa-solid fa-house"></em> Home</a>
+      <a href="lineup.html" > <em class="fa-solid fa-microphone"></em> Lineup</a>
+      <a href="tickets.html" ><em class="fa-solid fa-ticket"></em> Tickets</a>
+      <a href="schedule.html" ><em class="fa-regular fa-calendar"></em> Schedule</a>
+    </nav></header>
+    
+    <div class ="box">
+
+      <h1>MusicFest 2025 Tickets</h1>
+      <p>Secure your spot at MusicFest 2025 and be part of an unforgettable weekend of music, energy, and celebration!</p><br>
+
+      <form onsubmit="submitForm(event)">
+
+        <p class = "ticketForm"><label for="inputName" id="nameLabel">Full Name:</label> <input type="text" id="inputName" required/></p>
+        <p class = "ticketForm"><label for="inputEmail"  id="emailLabel">Email Adress: </label><input type="email" id="inputEmail" required/></p>
+        <p class = "ticketForm"><label for="inputNumber"  id="numberLabel">Phone Number:</label> <input type="tel" id="inputNumber" required/></p>
+
+        <p class = "ticketForm"><label for="ticketType">Ticket Type:</label>
+        <select id="ticketType">
+          <option value="standard">General Admission Pass</option>
+          <option value="vip">VIP Pass</option>
+          <option value="premium">Premium Pass</option>
+        </select></p>
+
+        <p class = "ticketForm"><label for="paymentType">Payment Method:</label>
+        <select id="paymentType">
+          <option value="credit">Credit Card</option>
+          <option value="debit">Debit Card</option>
+          <option value="paypal">PayPal</option>
+        </select></p>
+
+        <p class = "ticketForm"><label for="inputSpecial" id="specialLabel">Special Requirements:</label> <textarea placeholder= "Enter any special requirements needed" id="inputSpecial" ></textarea></p>
+        <p class = "ticketForm"><label><input type="checkbox" name="agree" required>Yes, I agree to the Terms and Conditions</label>
+
+        <input type="submit" value="Submit"/>
+        <input type="button" value="Reset" onclick="reset()"/>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      function submitForm(ev) { 
+        ev.preventDefault();
+        let phoneNumber = Number(document.getElementById("inputNumber").value);
+        
+        if (isNaN(phoneNumber) || (phoneNumber == "")){
+          alert("Enter valid phone number");
+          document.getElementById("numberLabel").style.color = "red";
+          ev.preventDefault();
+          return;
+        }
+        else {
+          alert("Ticket has been successfully booked"); 
+        }
+      }
+    </script>
+    
+    
+  </body>
+
+</html>

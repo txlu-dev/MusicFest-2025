@@ -1,0 +1,134 @@
+
+/* body styling */
+
+body {
+  font-family: Arial;
+  background-color: rgba(15, 21, 35, 1);
+  background-image: url('concert.jpg') ;
+  background-size: cover;       
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 90px;
+  overflow-x: hidden;
+  margin-top: 200px;
+  font-size: 20px;
+}
+
+h1, h2, h3 {
+  font-family:sans-serif;
+  color:skyblue;
+  text-shadow: 0 0 6px rgba(135, 206, 235, 0.8);
+}
+
+.logo:active {
+  text-shadow: 0 0 5px rgba(200, 120, 255, 0.45);
+}
+
+.box {
+  background-color: rgba(10, 15, 26, 0.8);
+  border-radius: 20px;
+  padding: 20px;                               
+  margin: 90px 120px  ;                           
+  box-shadow: 0 4px 10px rgba(5, 9, 19, 0.5);
+}
+
+header {
+  background-color: rgba(15, 21, 35, 1);
+  padding: 0px;   
+  position: fixed; 
+  box-shadow: 0 6px 10px rgba(5, 9, 19, 0.5);
+  width: 100%;
+  margin-top: 0;
+  top: 0;               /* sticks to the top */
+  left: 0;  
+  
+}
+
+nav {
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+ul {
+  text-align: center;
+  list-style-position: inside;
+}
+
+a:link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      }
+a:visited {
+      color: white;
+      }
+a:hover {
+      color: lightblue;
+      }
+a:active {
+      color: purple;
+      }
+
+img {
+  width: 300px;      
+  height: 200px;     
+  object-fit: cover; /* keeps ratio but crops edges */
+  border-radius: 10px;
+  flex-shrink: 0; /* prevents flexbox squeezing image when window shrinks */
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+figcaption {
+  text-align: left;
+}
+
+input, select, textarea {
+  background-color: rgba(10, 15, 26, 0.25);
+  color: white;
+  border-radius: 10px;  
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical; 
+  width: 300px;
+  height: 100px;  
+  min-height: 100px; 
+  max-height: 300px; 
+
+}
+
+.ticketForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+em {
+    color: white; 
+    font-size: 40px;
+}
+
+em:hover {
+      color: lightblue;
+      }
+em:active {
+      color: purple;
+      }
