@@ -14,7 +14,7 @@
       <a href="index.html" ><em class="fa-solid fa-house"></em> Home</a>
       <a href="lineup.html" > <em class="fa-solid fa-microphone"></em> Lineup</a>
       <a href="tickets.html" ><em class="fa-solid fa-ticket"></em> Tickets</a>
-      <a href="schedule.html" ><em class="fa-regular fa-calendar"></em> Schedule</a>
+      <a href="schedule.html" class="active"><em class="fa-regular fa-calendar"></em> Schedule</a>
     </nav></header>
     
     <div class ="box">
@@ -22,73 +22,78 @@
       <h1>MusicFest 2025 Tickets</h1>
       <p>Secure your spot at MusicFest 2025 and be part of an unforgettable weekend of music, energy, and celebration!</p><br>
 
-      <form onsubmit="submitForm(event)">
+      <table>
+        <caption><h2>Day 1</h2></caption>
+        <tr>
+          <th><h2>Timeslot</h2></th>
+          <th><h2>Artist Name</h2></th>
+          <th><h2>Stage Name</h2></th>
+        </tr>
+        <tr>
+          <td>12:00 PM</td>
+          <td>The Northshore Collective</td>
+          <td>Solaris Arena</td>
+        </tr>
+        <tr>
+          <td>1:30 PM</td>
+          <td>Midnight Monarchs</td>
+          <td>Lunar Lounge</td>
+        </tr>
+        <tr>
+          <td>3:00 PM</td>
+          <td>Aurora Skies</td>
+          <td>Starlight Stage</td>
+        </tr>
+        <tr>
+          <td>4:30 PM</td>
+          <td>DJ Solaris</td>
+          <td>Neon Nexus</td>
+        </tr>
+        <tr>
+          <td>6:00 PM</td>
+          <td>The Northshore Collective</td>
+          <td>Cosmos Arena</td>
+        </tr>
+      </table>
 
-        <p class = "ticketForm"><label for="input1" id="age">Full Name:</label> <input type="text" id="input1"/></p>
-        <p class = "ticketForm"><label for="input2"  id="emailAdress">Email Adress: </label><input type="email" id="input2"/></p>
-        <p class = "ticketForm"><label for="input3"  id="phoneNumber">Phone Number:</label> <input type="text" id="input3"/></p>
+      <table>
+        <caption><h2>Day 2</h2></caption>
+        <tr>
+          <th><h2>Timeslot</h2></th>
+          <th><h2>Artist Name</h2></th>
+          <th><h2>Stage Name</h2></th>
+        </tr>
+        <tr>
+          <td>12:00 PM</td>
+          <td>Ella Rhodes</td>
+          <td>Celestial Court</td>
+        </tr>
+        <tr>
+          <td>1:30 PM</td>
+          <td>Cobalt City</td>
+          <td>Electric Pavilion</td>
+        </tr>
+        <tr>
+          <td>3:00 PM</td>
+          <td>Global Groove Unit</td>
+          <td>World Stage</td>
+        </tr>
+        <tr>
+          <td>4:30 PM</td>
+          <td>Midnight Monarchs</td>
+          <td>Lunar Lounge</td>
+        </tr>
+        <tr>
+          <td>6:00 PM</td>
+          <td>Aurora Skies</td>
+          <td>Starlight Stage</td>
+        </tr>
+      </table>
 
-        <p class = "ticketForm"><label for="ticketType">Ticket Type:</label>
-        <select id="ticketType">
-          <option value="standard">General Admission Pass</option>
-          <option value="vip">VIP Pass</option>
-          <option value="premium">Premium Pass</option>
-        </select></p>
 
-        <p class = "ticketForm"><label for="paymentType">Payment Method:</label>
-        <select id="paymentType">
-          <option value="credit">Credit Card</option>
-          <option value="debit">Debit Card</option>
-          <option value="paypal">PayPal</option>
-        </select></p>
-
-        <p class = "ticketForm"><label for="input6" id="special">Special Requirements:</label> <textarea placeholder= "Enter any special requirements needed" id="input6"></textarea></p>
-        <p class = "ticketForm"><label><input type="checkbox" name="agree" required>Yes, I agree to the Terms and Conditions</label>
-
-        <input type="submit" value="Submit"/>
-        <input type="button" value="Reset" onclick="help()"/>
-      </form>
     </div>
 
-    <script type="text/javascript">
-      function submitForm(ev) { 
-        ev.preventDefault();
-        let age = Number(document.getElementById("input1").value);
-        let name = document.getElementById("input2").value;
-        let email = document.getElementById("input3").value;
-        
-        if (isNaN(age) || (age == "")){
-          alert("Enter valid age");
-          document.getElementById("age").style.color = "red";
-          ev.preventDefault();
-          return;
-        }
-        
-        else if (age < 18) {
-          alert("You are too young");
-          document.getElementById("age").style.color = "red";
-          ev.preventDefault();
-          return;
-        }
-        
-        else if (!email.includes("@")) {
-          alert("Email should be in format: john@gmail.com");
-          document.getElementById("email").style.color = "red";
-          document.getElementById("age").style.color = "black";
-          ev.preventDefault();
-          return;
-        
-        }
-        else {
-        document.getElementById("success").innerHTML = 'Success';
-        document.getElementById("age").style.color = "black"; 
-        document.getElementById("email").style.color = "black"; 
-        }
-      }
-      function help() {
-        alert("Make sure age is 18 or higher");
-      }
-    </script>
+   
     
     
   </body>

@@ -72,10 +72,15 @@ a:visited {
       }
 a:hover {
       color: lightblue;
+      opacity: 0.8; 
+      transform: scale(1.02); 
+      transition: 0.2s;
       }
 a:active {
       color: purple;
       }
+
+      
 
 img {
   width: 300px;      
@@ -132,3 +137,26 @@ em:hover {
 em:active {
       color: purple;
       }
+
+a.active {
+  color: lightblue;
+}
+
+
+a.active:active {
+  color: purple;
+}
+
+table {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+tr {
+  display: flex;
+  gap: 90px;
+  align-items: right;
+}
+
