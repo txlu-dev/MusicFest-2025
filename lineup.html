@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>Lineup | MusicFest 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- CSS File -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font for icons -->
   </head>
   <body>
+
     
-    <! –– Site Navigation Menu ––>
+    <!-- Site Navigation Menu -->
     <header><nav>
       <h1><a href="index.html" class="logo" >MusicFest 2025<a href="index.html" ></a></h1>
       <a href="index.html" ><em class="fa-solid fa-house"></em> Home</a>
@@ -20,11 +21,12 @@
     <h1>MusicFest 2025 Lineup</h1>
     <p>Check out the amazing artists performing at MusicFest 2025!</p><br>
 
+    
     <section>
       <figure>
         <img src="img1.jpg" alt="Midnight Monarchs performing live at MusicFest 2025">
         <figcaption>
-          <h2>Midnight Monarchs</h2>
+          <h2>Midnight Monarchs <button class="volBut" onclick="playMusic('rock')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> Indie Rock</p>
           <p>Blending catchy melodies with atmospheric live performances.</p>
         </figcaption>
@@ -33,7 +35,7 @@
       <figure>
         <img src="img2.jpg" alt="Aurora Skies on stage with light show">
         <figcaption>
-          <h2>Aurora Skies</h2>
+          <h2>Aurora Skies<button class="volBut" onclick="playMusic('pop')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> Electronic Pop</p>
           <p>Chart-topping electronic pop group known for spectacular visual shows.</p>
         </figcaption>
@@ -42,7 +44,7 @@
       <figure>
         <img src="img3.jpg" alt="DJ Solaris spinning at MusicFest 2025">
         <figcaption>
-          <h2>DJ Solaris</h2>
+          <h2>DJ Solaris<button class="volBut" onclick="playMusic('edm')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> Dance / EDM</p>
           <p>London’s dance music icon delivering high-energy EDM sets to close the night.</p>
         </figcaption>
@@ -51,7 +53,7 @@
       <figure>
         <img src="img4.jpg" alt="Ella Rhodes performing at MusicFest 2025">
         <figcaption>
-          <h2>Ella Rhodes</h2>
+          <h2>Ella Rhodes<button class="volBut" onclick="playMusic('soul')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> Soul Pop</p>
           <p>Rising soul-pop star with smooth vocals and infectious UK vibes.</p>
         </figcaption>
@@ -60,7 +62,7 @@
       <figure>
         <img src="img5.jpg" alt="Cobalt City performing synthwave music">
         <figcaption>
-          <h2>Cobalt City</h2>
+          <h2>Cobalt City<button class="volBut" onclick="playMusic('synth')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> Synthwave</p>
           <p>Delivering retro-future, neon-soaked soundscapes.</p>
         </figcaption>
@@ -69,7 +71,7 @@
       <figure>
         <img src="img6.jpg" alt="Global Groove Unit live performance">
         <figcaption>
-          <h2>Global Groove Unit</h2>
+          <h2>Global Groove Unit<button class="volBut" onclick="playMusic('afro')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> World Fusion</p>
           <p>Mixing Afrobeat, UK jazz, and electronic rhythms for a unique live experience.</p>
         </figcaption>
@@ -78,7 +80,7 @@
       <figure>
         <img src="img7.jpg" alt="The Northshore Collective performing live">
         <figcaption>
-          <h2>The Northshore Collective</h2>
+          <h2>The Northshore Collective<button class="volBut" onclick="playMusic('uk')"> <em class="fa-solid fa-volume-high"></em></button></h2>
           <p><b>Genre:</b> Alternative Rock</p>
           <p>UK-based alternative rock band known for their gritty sound and energetic live shows.</p>
         </figcaption>
@@ -86,5 +88,33 @@
       
     </section>
     </div>
+
+    <script>
+     let audio = null;
+     let currentSong = null;
+   
+     // Plays selected song
+     function playMusic(song) {
+          // If the same song is selected
+          if (audio && song === currentSong) {
+               if (audio.paused) {
+                    audio.play();
+               } else {
+                    audio.pause();
+               }
+               return;
+          }
+          // If a different song is selected
+          if (audio) {
+               audio.pause();
+               audio.currentTime = 0;
+          }
+          // Play Song
+          audio = new Audio(song + ".mp3");
+          audio.volume = 0.15;
+          currentSong = song;
+          audio.play();
+        }
+    </script>
   </body>
 </html>

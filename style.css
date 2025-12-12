@@ -1,14 +1,13 @@
 
-/* body styling */
 
 body {
   font-family: Arial;
   background-color: rgba(15, 21, 35, 1);
   background-image: url('concert.jpg') ;
-  background-size: cover;       
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background-size: cover;     /* Ensures background fills the whole screen */  
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center center; /* Keeps image centered */
+  background-attachment: fixed; /* Background stays in place when scrolling */
   color: white;
   text-align: center;
   margin: 0;
@@ -21,30 +20,34 @@ body {
 h1, h2, h3 {
   font-family:sans-serif;
   color:skyblue;
-  text-shadow: 0 0 6px rgba(135, 206, 235, 0.8);
+  text-shadow: 0 0 6px rgba(135, 206, 235, 0.8); /* Glow effect */
 }
+
+
 
 .logo:active {
   text-shadow: 0 0 5px rgba(200, 120, 255, 0.45);
 }
 
 .box {
-  background-color: rgba(10, 15, 26, 0.8);
-  border-radius: 20px;
+  background-color: rgba(10, 15, 26, 0.8); /* Semi-transparent dark box */
+  border-radius: 20px;   /* Rounded corners */
   padding: 20px;                               
   margin: 90px 120px  ;                           
-  box-shadow: 0 4px 10px rgba(5, 9, 19, 0.5);
+  box-shadow: 0 4px 10px rgba(5, 9, 19, 0.5);/* Subtle shadow for depth */
+  position: relative;                   /* Needed for absolute children positioning with schedule buttons */
 }
 
 header {
   background-color: rgba(15, 21, 35, 1);
   padding: 0px;   
-  position: fixed; 
+  position: fixed;    /* Keeps the header at the top when scrolling */
   box-shadow: 0 6px 10px rgba(5, 9, 19, 0.5);
   width: 100%;
   margin-top: 0;
-  top: 0;               /* sticks to the top */
-  left: 0;  
+  top: 0;               
+  left: 0;   /* Sticks header to the top and left of page */
+  z-index: 1000;   /* Puts header on the topmost layer*/
   
 }
 
@@ -59,7 +62,7 @@ nav {
 
 ul {
   text-align: center;
-  list-style-position: inside;
+  list-style-position: inside;     /* Moves bullets inside */
 }
 
 a:link {
@@ -73,21 +76,19 @@ a:visited {
 a:hover {
       color: lightblue;
       opacity: 0.8; 
-      transform: scale(1.02); 
-      transition: 0.2s;
+      transform: scale(1.02); /* Slight growth effect on hover */
+      transition: 0.2s;       /* Smooth transition */
       }
 a:active {
       color: purple;
       }
 
-      
-
 img {
   width: 300px;      
   height: 200px;     
-  object-fit: cover; /* keeps ratio but crops edges */
+  object-fit: cover;  /* Maintains aspect ratio while filling the container */
   border-radius: 10px;
-  flex-shrink: 0; /* prevents flexbox squeezing image when window shrinks */
+  flex-shrink: 0;     /* Prevents flexbox from squeezing the image when the window shrinks*/
 }
 
 figure {
@@ -111,7 +112,7 @@ input, select, textarea {
 }
 
 textarea {
-  resize: vertical; 
+  resize: vertical; /* Only allow vertical resizing */
   width: 300px;
   height: 100px;  
   min-height: 100px; 
@@ -126,6 +127,7 @@ textarea {
   gap: 10px;
 }
 
+/* Icons */
 em {
     color: white; 
     font-size: 40px;
@@ -138,25 +140,45 @@ em:active {
       color: purple;
       }
 
+.volBut{
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+  text-shadow: 0 0 6px rgba(135, 206, 235, 0.8);
+}
+
+.volBut:active{
+  text-shadow: 0 0 5px rgba(200, 120, 255, 0.45);
+}
+
 a.active {
   color: lightblue;
 }
-
 
 a.active:active {
   color: purple;
 }
 
 table {
+  width: 80%;       /* Or 100% if you want full width */
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 45px;
+  border-collapse: collapse;
+  text-align: center;
 }
 
-tr {
-  display: flex;
-  gap: 90px;
-  align-items: right;
+th, td {
+  padding: 15px 20px;                                /* Space inside cells */
+  width: 33%;                                        /* Makes the 3 columns evenly spaced */
+  border-bottom: 4px solid rgba(10, 15, 26, 0.25); /* Subtle separation line */
 }
+
+/* Locks buttons in top-right of container */
+.scheduleButtons{
+  position: absolute; 
+  top: 10px;
+  right: 10px; 
+}
+
+
 

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tickets | MusicFest 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Schedule | MusicFest 2025</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS File -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font for icons -->
   </head>
   <body>
-    <body>
+
     
-    <! –– Site Navigation Menu ––>
+    <!-- Site Navigation Menu -->
     <header><nav>
       <h1><a href="index.html" class="logo" >MusicFest 2025<a href="index.html" ></a></h1>
       <a href="index.html" ><em class="fa-solid fa-house"></em> Home</a>
@@ -19,11 +19,20 @@
     
     <div class ="box">
 
-      <h1>MusicFest 2025 Tickets</h1>
-      <p>Secure your spot at MusicFest 2025 and be part of an unforgettable weekend of music, energy, and celebration!</p><br>
+      <h1>MusicFest 2025 Tickets</h1> 
 
-      <table>
-        <caption><h2>Day 1</h2></caption>
+      <!-- Filter Buttons -->
+      <span class="scheduleButtons"> 
+        <input type="button" value="All" onclick="toggle('all')" /> 
+        <input type="button" value="Day 1" onclick="toggle('day1')"/> 
+        <input type="button" value="Day 2" onclick="toggle('day2')"/> 
+      </span>
+
+     <p>Secure your spot at MusicFest 2025 and be part of an unforgettable weekend of music, energy, and celebration!</p><br>
+      
+     <!-- Tables -->
+      <table id="table1">
+        <caption><h1>Day 1</h1></caption>
         <tr>
           <th><h2>Timeslot</h2></th>
           <th><h2>Artist Name</h2></th>
@@ -56,8 +65,8 @@
         </tr>
       </table>
 
-      <table>
-        <caption><h2>Day 2</h2></caption>
+      <table id="table2">
+        <caption><h1>Day 2</h1></caption>
         <tr>
           <th><h2>Timeslot</h2></th>
           <th><h2>Artist Name</h2></th>
@@ -93,6 +102,30 @@
 
     </div>
 
+    
+    <script>
+
+      //Choose which tables display
+      function toggle(mode) {
+         const t1 = document.getElementById("table1");
+         const t2 = document.getElementById("table2");
+
+         if (mode == "all" ){
+          t1.style.display = "" ;
+          t2.style.display = "" ;
+         }
+
+         else if (mode == "day1" ){
+          t1.style.display = "" ;
+          t2.style.display = "none" ;
+         }
+
+         else {
+          t1.style.display = "none" ;
+          t2.style.display = "" ;
+         } 
+        }
+    </script>
    
     
     
